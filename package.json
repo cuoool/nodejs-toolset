@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --ext .js --ignore-path .gitignore . --fix",
-    "test": "node ./bin/cli run:test './test/**/*.test.js' --exit --reporter=dot --timeout=9000"
+    "test": "mocha './test/**/*.test.js' --exit --reporter=dot --timeout=9000"
   },
   "repository": {
     "type": "git",
