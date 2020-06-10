@@ -16,12 +16,12 @@ class BaseModel extends Sequelize.Model {
     const { count, rows } = await super.findAndCountAll({
       ...attribute,
       offset: (page - 1) * itemsPerPage,
-      limit: itemsPerPage
+      limit: itemsPerPage,
     });
 
     return {
       rows: await Promise.all(rows.map((r) => r.toJSON())),
-      pagination: { count, page, itemsPerPage }
+      pagination: { count, page, itemsPerPage },
     };
   }
 
@@ -47,7 +47,7 @@ class BaseModel extends Sequelize.Model {
 
   softDelete() {
     return this.update({
-      deletedAt: Date.now()
+      deletedAt: Date.now(),
     });
   }
 }

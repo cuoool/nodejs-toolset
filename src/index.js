@@ -2,7 +2,6 @@ const authoration = require('./authorization');
 const logger = require('./logger');
 const model = require('./model');
 const storage = require('./storage');
-const mailer = require('./transport/mailer');
 const sms = require('./transport/sms');
 
 module.exports = {
@@ -10,6 +9,5 @@ module.exports = {
   logger,
   model,
   storage,
-  mailer,
-  sms
-}
+  sms,
+};
