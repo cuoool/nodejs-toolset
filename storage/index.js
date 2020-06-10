@@ -4,7 +4,7 @@ const util = require('util');
 const crypto = require('crypto');
 // const mime = require('mime-types');
 const FileType = require('file-type');
-const config = require('../../config');
+const config = require('../config');
 const LocalDisk = require('./disks/local');
 const SpaceDisk = require('./disks/space');
 
@@ -35,7 +35,7 @@ const storage = ({
     const { ext, mime } = await FileType.fromFile(source);
     const fullPath = path.join(
       destination,
-      ext !== '' ? `${fileName}.${ext}` : fileName
+      ext !== '' ? `${fileName}.${ext}` : fileName,
     );
 
     await diskInstance.write(
@@ -43,8 +43,8 @@ const storage = ({
       content,
       {
         metadata: { ContentType: mime },
-        ...options
-      }
+        ...options,
+      },
     );
 
     return fullPath.replace(/\\/g, '/');

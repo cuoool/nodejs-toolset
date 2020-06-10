@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const mkdirp = require('mkdirp');
-const config = require('../../../config');
+const config = require('../../config');
 
 function LocalDisk() {
   async function write(filePath, content) {

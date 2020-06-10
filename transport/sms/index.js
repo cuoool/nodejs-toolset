@@ -1,6 +1,6 @@
 const { isEmpty } = require('validator');
 const Twilio = require('twilio');
-const config = require('../../../config');
+const config = require('../../config');
 
 const send = async ({ from, to, body } = {}) => {
   const isEmptyFrom = from === undefined || isEmpty(from);
@@ -11,7 +11,7 @@ const send = async ({ from, to, body } = {}) => {
     const err = [
       isEmptyFrom ? '`From`' : '',
       isEmptyTo ? '`To`' : '',
-      isEmptyBody ? '`Body`' : ''
+      isEmptyBody ? '`Body`' : '',
     ].join(', ');
 
     throw new Error(`${err} not provided`);
@@ -19,7 +19,7 @@ const send = async ({ from, to, body } = {}) => {
 
   const twilio = Twilio(
     config.get('transportation.twilio.sid'),
-    config.get('transportation.twilio.token')
+    config.get('transportation.twilio.token'),
   );
 
   await twilio.messages.create({ body, from, to });
