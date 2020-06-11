@@ -10,6 +10,8 @@ module.exports = {
     let val = cloneDeep(this.configVariable);
 
     for (let i = 0; i < strArray.length; i += 1) {
+      if (val === undefined) { return undefined; }
+
       val = val[strArray[i]];
     }
 

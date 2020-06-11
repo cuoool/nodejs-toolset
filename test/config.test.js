@@ -15,4 +15,22 @@ describe('Load config', () => {
 
     expect(config.configVariable).to.deep.equal(configData);
   });
+
+  it('Get a specific config property value', () => {
+    const configData = {
+      appUrl: 'app.com',
+      jwt: {
+        secret: '123',
+        salt: 10,
+      },
+    };
+
+    config.load(configData);
+
+    expect(config.get('jwt.secret')).to.equal('123');
+  });
+
+  it('Stop reading object properties if undefined', () => {
+    expect(config.get('filesystem.disks.space')).to.be.undefined;
+  });
 });
