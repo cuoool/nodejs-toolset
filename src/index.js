@@ -1,5 +1,5 @@
 const config = require('./config');
-const authoration = require('./authorization');
+const authorization = require('./authorization');
 const logger = require('./logger');
 const { BaseModel, ModelNotFoundError } = require('./model');
 const storage = require('./storage');
@@ -7,7 +7,7 @@ const sms = require('./transport/sms');
 
 module.exports = {
   config,
-  authoration,
+  authorization,
   logger,
   BaseModel,
   ModelNotFoundError,
