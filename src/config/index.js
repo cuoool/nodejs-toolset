@@ -1,13 +1,14 @@
 const { cloneDeep } = require('lodash');
 
+let configVariable;
+
 module.exports = {
-  configVariable: {},
   load(data) {
-    this.configVariable = cloneDeep(data);
+    configVariable = cloneDeep(data);
   },
   get(str) {
     const strArray = str.split('.');
-    let val = cloneDeep(this.configVariable);
+    let val = cloneDeep(configVariable);
 
     for (let i = 0; i < strArray.length; i += 1) {
       if (val === undefined) { return undefined; }

@@ -1,5 +1,7 @@
 const { expect } = require('chai');
-const config = require('../src/config');
+const rewire = require('rewire');
+
+const config = rewire('../src/config');
 
 describe('Load config', () => {
   it('Should store cofig data in local variable', () => {
@@ -13,7 +15,7 @@ describe('Load config', () => {
 
     config.load(configData);
 
-    expect(config.configVariable).to.deep.equal(configData);
+    expect(config.__get__('configVariable')).to.deep.equal(configData);
   });
 
   it('Get a specific config property value', () => {
