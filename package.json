@@ -2,10 +2,9 @@
   "name": "@bonnak/toolset",
   "version": "1.0.14",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "lib/**/*",
-    "index"
+    "lib/**/*"
   ],
   "scripts": {
     "lint": "eslint --ext .js --ignore-path .gitignore . --fix",
