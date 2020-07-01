@@ -9,7 +9,7 @@ const sms = require('./lib/transport/sms');
  * Middleware
  */
 const authorize = require('./lib/middleware/authorize');
-const error = require('./lib/middleware/error');
+const errorHandler = require('./lib/middleware/error-handler');
 const uploadTmp = require('./lib/middleware/upload-tmp');
 const validateRequest = require('./lib/middleware/validate-request');
 
@@ -31,7 +31,7 @@ module.exports = {
   storage,
   sms,
   authorize,
-  error,
+  errorHandler,
   uploadTmp,
   validateRequest,
   alreadyExistError,
