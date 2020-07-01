@@ -16,10 +16,10 @@ const validateRequest = require('./lib/middleware/validate-request');
 /**
  * Exception
  */
-const alreadyExistError = require('./lib/exception/already-exist-error');
-const notAllowError = require('./lib/exception/not-allow-error');
-const notFoundError = require('./lib/exception/not-found-error');
-const responseError = require('./lib/exception/response-error');
+const AlreadyExistError = require('./lib/exception/already-exist-error');
+const NotAllowError = require('./lib/exception/not-allow-error');
+const NotFoundError = require('./lib/exception/not-found-error');
+const ResponseError = require('./lib/exception/response-error');
 
 
 module.exports = {
@@ -34,8 +34,8 @@ module.exports = {
   errorHandler,
   uploadTmp,
   validateRequest,
-  alreadyExistError,
-  notAllowError,
-  notFoundError,
-  responseError,
+  AlreadyExistError,
+  NotAllowError,
+  NotFoundError,
+  ResponseError,
 };
