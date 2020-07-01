@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "files": [
-    "lib/**/*",
-    "middleware.js"
+    "lib/**/*"
   ],
   "scripts": {
     "lint": "eslint --ext .js --ignore-path .gitignore . --fix",
