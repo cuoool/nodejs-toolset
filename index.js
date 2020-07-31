@@ -1,7 +1,12 @@
 const config = require('./lib/config');
 const authorization = require('./lib/authorization');
 const logger = require('./lib/logger');
-const { BaseModel, ModelNotFoundError, buildFilterQuery } = require('./lib/model');
+const {
+  BaseModel,
+  ModelNotFoundError,
+  buildFilterQuery,
+  makePaging,
+} = require('./lib/model');
 const storage = require('./lib/storage');
 const sms = require('./lib/transport/sms');
 
@@ -28,6 +33,7 @@ module.exports = {
   logger,
   BaseModel,
   buildFilterQuery,
+  makePaging,
   ModelNotFoundError,
   storage,
   sms,
