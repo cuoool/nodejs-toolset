@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const rewire = require('rewire');
 
-const config = rewire('../src/config');
+const config = rewire('../lib/config');
 
 describe('Load config', () => {
   it('Should store cofig data in local variable', () => {
