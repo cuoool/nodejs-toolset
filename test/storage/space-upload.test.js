@@ -16,7 +16,7 @@ describe('Space storage', () => {
             region: process.env.SPACE_REGION,
             bucket: process.env.SPACE_BUCKET,
             root: undefined,
-            visibility: process.env.SPACE_VISIBILITY,
+            acl: process.env.SPACE_ACL,
           },
         },
       },
