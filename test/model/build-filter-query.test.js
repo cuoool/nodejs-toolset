@@ -25,7 +25,7 @@ describe('Query filter', () => {
     });
   });
 
-  it.only('use callback', () => {
+  it('use callback', () => {
     const filter = { event: 'EventName', fromDate: '2020-01-01', toDate: '2020-10-03' };
 
     const result = buildQueryFilter(filter, (prop) => ([
