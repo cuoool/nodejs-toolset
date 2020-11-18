@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/cuoool/nodejs-toolset#readme",
   "dependencies": {
-    "aws-sdk": "^2.769.0",
+    "aws-sdk": "^2.794.0",
     "express-validator": "^6.6.0",
     "file-type": "^14.6.1",
     "is-jpg": "^2.0.0",
