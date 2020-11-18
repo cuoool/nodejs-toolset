@@ -54,4 +54,44 @@ describe('Query filter', () => {
 
     expect(result).to.deep.equal({ f2: 'something' });
   });
+
+  it('return empty object if `filter` is undefined', () => {
+    const filter = undefined;
+
+    const result = buildQueryFilter(filter, () => (['f1', 'f2']));
+
+    expect(result).to.deep.equal({});
+  });
+
+  it('return empty object if `filter` is null', () => {
+    const filter = null;
+
+    const result = buildQueryFilter(filter, () => (['f1', 'f2']));
+
+    expect(result).to.deep.equal({});
+  });
+
+  it('return empty object if `filter` is string', () => {
+    const filter = 'something';
+
+    const result = buildQueryFilter(filter, () => (['f1', 'f2']));
+
+    expect(result).to.deep.equal({});
+  });
+
+  it('return empty object if `filter` is number', () => {
+    const filter = 899;
+
+    const result = buildQueryFilter(filter, () => (['f1', 'f2']));
+
+    expect(result).to.deep.equal({});
+  });
+
+  it('return empty object if `filter` is array', () => {
+    const filter = [];
+
+    const result = buildQueryFilter(filter, () => (['f1', 'f2']));
+
+    expect(result).to.deep.equal({});
+  });
 });
