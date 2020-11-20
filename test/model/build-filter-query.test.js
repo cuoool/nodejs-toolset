@@ -33,7 +33,7 @@ describe('Query filter', () => {
       {
         createdAt: {
           [Op.gte]: prop.fromDate,
-          [Op.lte]: prop.fromDate,
+          [Op.lte]: prop.toDate,
         },
       },
     ]));
@@ -93,5 +93,16 @@ describe('Query filter', () => {
     const result = buildQueryFilter(filter, () => (['f1', 'f2']));
 
     expect(result).to.deep.equal({});
+  });
+
+  it('remove empty attribute object', () => {
+    const result1 = buildQueryFilter({ f1: 'something' }, () => ([
+      'f1',
+      {
+        f2: {},
+      },
+    ]));
+
+    expect(result1).to.deep.equal({ f1: 'something' });
   });
 });
