@@ -17,9 +17,12 @@
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 11
+        "ecmaVersion": 11,
+        "babelOptions": {
+            "configFile": "./babel.config.js"
+        }
     },
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "rules": {
         "semi": ["error", "always"],
         "consistent-return": "off",
